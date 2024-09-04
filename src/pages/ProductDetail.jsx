@@ -25,7 +25,7 @@ const ProductDetail = () => {
     const fetchProductDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/products/${id}`
+          `http://ano.koneloneshin.com/products/${id}`
         );
         setProduct(response.data);
       } catch (error) {
@@ -66,7 +66,7 @@ const ProductDetail = () => {
   }
 
   const imageUrl = product.photo_url
-    ? `http://localhost:5000/uploads/${product.photo_url}`
+    ? `http://ano.koneloneshin.com/uploads/${product.photo_url}`
     : "";
 
   return (
