@@ -1,4 +1,3 @@
-// src/pages/SignOutPage.jsx
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
@@ -10,7 +9,7 @@ const SignOutPage = ({ onSignOut }) => {
 
   const handleSignOut = () => {
     onSignOut();
-    navigate("/"); // Redirect to home page after sign-out
+    navigate("/");
   };
 
   return (

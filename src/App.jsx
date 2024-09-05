@@ -1,4 +1,3 @@
-// src/App.jsx
 import * as React from "react";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -11,8 +10,8 @@ import {
 import AppBarComponent from "./components/AppBarComponent";
 import DrawerComponent from "./components/DrawerComponent";
 import MainContent from "./components/MainContent";
-import Home from "./pages/Home"; // Import Home component
-import Dashboard from "./pages/Dashboard"; // Import Dashboard component
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
 import Products from "./pages/Products";
 import AddProduct from "./pages/AddProduct";
 import Orders from "./pages/Orders";
@@ -21,11 +20,11 @@ import Settings from "./pages/Settings";
 import ProductDetail from "./pages/ProductDetail";
 import SignInPage from "./pages/SignInPage";
 import SignOutPage from "./pages/SignOutPage";
-import { useAuth, AuthProvider } from "./components/AuthContext"; // Import useAuth and AuthProvider
+import { useAuth, AuthProvider } from "./components/AuthContext";
 
 const AppContent = () => {
   const { isAuthenticated, signIn, signOut } = useAuth();
-  const [drawerOpen, setDrawerOpen] = React.useState(true); // Set to true to start with the drawer open
+  const [drawerOpen, setDrawerOpen] = React.useState(true);
 
   const handleDrawerOpen = () => {
     setDrawerOpen(true);
@@ -58,9 +57,8 @@ const AppContent = () => {
       />
       <MainContent drawerOpen={drawerOpen}>
         <Routes>
-          <Route path="/" element={<Home />} /> {/* Home page */}
+          <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />{" "}
-          {/* Dashboard page */}
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<ProductDetail />} />
           <Route path="/add-product" element={<AddProduct />} />

@@ -1,4 +1,3 @@
-// src/components/AppBarComponent.jsx
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 import MuiAppBar from "@mui/material/AppBar";
@@ -15,7 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Divider from "@mui/material/Divider";
 import { useAuth } from "./AuthContext";
 import { useNavigate } from "react-router-dom";
-import Box from "@mui/material/Box"; // Import Box
+import Box from "@mui/material/Box";
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== "drawerOpen",
@@ -32,7 +31,7 @@ const AppBar = styled(MuiAppBar, {
       duration: theme.transitions.duration.enteringScreen,
     }),
   }),
-  backgroundColor: "#FFB22C",
+  backgroundColor: "#cb2f30",
 }));
 
 const AppBarComponent = ({ drawerOpen, handleDrawerOpen }) => {
@@ -80,9 +79,9 @@ const AppBarComponent = ({ drawerOpen, handleDrawerOpen }) => {
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" noWrap component="div">
+        {/* <Typography variant="h6" noWrap component="div">
           Aung Ngwe Oh
-        </Typography>
+        </Typography> */}
         <Box sx={{ flexGrow: 1 }} />
         <IconButton
           size="large"

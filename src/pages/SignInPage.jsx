@@ -1,4 +1,3 @@
-// src/pages/SignInPage.jsx
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
@@ -23,7 +22,7 @@ const SignInPage = ({ onSignIn }) => {
   const handleSignIn = () => {
     if (username === hardcodedUsername && password === hardcodedPassword) {
       onSignIn();
-      navigate("/"); // Redirect to home page after successful sign-in
+      navigate("/");
     } else {
       alert("Invalid credentials");
     }

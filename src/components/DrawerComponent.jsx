@@ -17,7 +17,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import Collapse from "@mui/material/Collapse";
 import { Link } from "react-router-dom";
 import { drawerWidth } from "../constants";
-import DrawerHeader from "./DrawerHeader";
+import DrawerHeaderComponent from "./DrawerHeader";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import ViewListIcon from "@mui/icons-material/ViewList";
@@ -32,8 +32,8 @@ const DrawerComponent = styled(Drawer)(({ theme }) => ({
   "& .MuiDrawer-paper": {
     width: drawerWidth,
     boxSizing: "border-box",
-    backgroundColor: "#FF4C4C",
-    color: "#fff", // White text color
+    backgroundColor: "#cb2f30",
+    color: "#FFDB00", // White text color
   },
 }));
 
@@ -46,11 +46,7 @@ const Sidebar = ({ drawerOpen, handleDrawerClose }) => {
 
   return (
     <DrawerComponent variant="persistent" anchor="left" open={drawerOpen}>
-      <DrawerHeader>
-        <IconButton onClick={handleDrawerClose}>
-          <ChevronLeftIcon style={{ color: "#fff" }} />
-        </IconButton>
-      </DrawerHeader>
+      <DrawerHeaderComponent onClose={handleDrawerClose} />
       <Divider />
       <List>
         <ListItem disablePadding>

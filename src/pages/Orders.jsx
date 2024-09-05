@@ -1,4 +1,3 @@
-// src/pages/Orders.jsx
 import React from "react";
 
 const Orders = () => {

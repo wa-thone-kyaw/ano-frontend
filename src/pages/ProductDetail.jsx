@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import API_BASE_URL from "../config/apiConfig";
 import {
   Container,
   Typography,
@@ -24,9 +25,7 @@ const ProductDetail = () => {
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        const response = await axios.get(
-          `http://ano.koneloneshin.com/products/${id}`
-        );
+        const response = await axios.get(`${API_BASE_URL}/products/${id}`);
         setProduct(response.data);
       } catch (error) {
         console.error("Error fetching product details:", error);
@@ -66,7 +65,7 @@ const ProductDetail = () => {
   }
 
   const imageUrl = product.photo_url
-    ? `http://ano.koneloneshin.com/uploads/${product.photo_url}`
+    ? `${API_BASE_URL}/uploads/${product.photo_url}`
     : "";
 
   return (
@@ -83,7 +82,6 @@ const ProductDetail = () => {
 
       <Paper elevation={3} sx={{ padding: 3, marginTop: 3 }}>
         <Grid container spacing={4}>
-          {/* Product Image */}
           <Grid item xs={12} md={6}>
             <Box
               component="img"
@@ -99,7 +97,6 @@ const ProductDetail = () => {
             />
           </Grid>
 
-          {/* Product Details */}
           <Grid item xs={12} md={6}>
             <Typography variant="h4" gutterBottom>
               {product.name}
@@ -119,22 +116,10 @@ const ProductDetail = () => {
               <strong>Size:</strong> {product.size}
             </Typography>
             <Typography variant="body1" gutterBottom>
-              <strong>Packaging:</strong> {product.packaging}
-            </Typography>
-            <Typography variant="body1" gutterBottom>
               <strong>Color:</strong> {product.color}
             </Typography>
             <Typography variant="body1" gutterBottom>
-              <strong>Price:</strong> ${product.price}
-            </Typography>
-            <Typography variant="body1" gutterBottom>
-              <strong>Raw Material Type:</strong> {product.raw_material_type}
-            </Typography>
-            <Typography variant="body1" gutterBottom>
-              <strong>Machine Type:</strong> {product.machine_type}
-            </Typography>
-            <Typography variant="body1" gutterBottom>
-              <strong>MO Number:</strong> {product.mo_number}
+              <strong>MO Number:</strong> {product.mo_number}{" "}
             </Typography>
           </Grid>
         </Grid>

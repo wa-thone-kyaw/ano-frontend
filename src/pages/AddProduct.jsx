@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import API_BASE_URL from "../config/apiConfig";
 import {
   Container,
   Typography,
@@ -20,12 +21,8 @@ const AddProduct = () => {
     name: "",
     group_name: "",
     size: "",
-    packaging: "",
     color: "",
     price: "",
-    raw_material_type: "",
-    machine_type: "",
-    mo_number: "",
     photo: null,
   });
 
@@ -49,7 +46,7 @@ const AddProduct = () => {
     });
 
     axios
-      .post("http://ano.koneloneshin.com/products", formData, {
+      .post("${API_BASE_URL}/products", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -61,12 +58,8 @@ const AddProduct = () => {
           name: "",
           group_name: "",
           size: "",
-          packaging: "",
           color: "",
           price: "",
-          raw_material_type: "",
-          machine_type: "",
-          mo_number: "",
           photo: null,
         });
       })
@@ -93,12 +86,8 @@ const AddProduct = () => {
                 { name: "name", label: "Product Name" },
                 { name: "group_name", label: "Group Name" },
                 { name: "size", label: "Size" },
-                { name: "packaging", label: "Packaging" },
                 { name: "color", label: "Color" },
                 { name: "price", label: "Price" },
-                { name: "raw_material_type", label: "Raw Material Type" },
-                { name: "machine_type", label: "Machine Type" },
-                { name: "mo_number", label: "MO Number" },
               ].map((field) => (
                 <Grid item xs={12} sm={6} key={field.name}>
                   <TextField
