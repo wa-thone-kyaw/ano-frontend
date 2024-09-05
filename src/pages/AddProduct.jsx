@@ -46,7 +46,7 @@ const AddProduct = () => {
     });
 
     axios
-      .post("${API_BASE_URL}/products", formData, {
+      .post(`${API_BASE_URL}/products`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
